@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: bitcoin-ml-predictor
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm run start:server
+    envVars:
+      - key: NODE_VERSION
+        value: 18.20.3
+      - key: VITE_SUPABASE_URL
+        sync: false
+      - key: VITE_SUPABASE_ANON_KEY
+        sync: false
